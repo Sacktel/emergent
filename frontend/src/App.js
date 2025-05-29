@@ -140,6 +140,28 @@ const Dashboard = () => {
             
             <div className="flex items-center gap-3">
               <select 
+                value={selectedPriority}
+                onChange={(e) => setSelectedPriority(e.target.value)}
+                className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="all">All Priorities</option>
+                <option value="P1">P1 - Critical</option>
+                <option value="P2">P2 - High</option>
+                <option value="P3">P3 - Medium</option>
+                <option value="P4">P4 - Low</option>
+              </select>
+              <select 
+                value={selectedStatus}
+                onChange={(e) => setSelectedStatus(e.target.value)}
+                className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="all">All Status</option>
+                <option value="Open">Open</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Resolved">Resolved</option>
+                <option value="Closed">Closed</option>
+              </select>
+              <select 
                 value={selectedTimeRange}
                 onChange={(e) => setSelectedTimeRange(e.target.value)}
                 className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -155,6 +177,10 @@ const Dashboard = () => {
               >
                 <RefreshCw className="h-4 w-4" />
                 Refresh
+              </button>
+              <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                <Download className="h-4 w-4" />
+                Export
               </button>
             </div>
           </div>
