@@ -95,6 +95,8 @@ const Dashboard = () => {
   const [data, setData] = useState(null);
   const [selectedTimeRange, setSelectedTimeRange] = useState('12m');
   const [lastRefresh, setLastRefresh] = useState(new Date());
+  const [selectedPriority, setSelectedPriority] = useState('all');
+  const [selectedStatus, setSelectedStatus] = useState('all');
 
   useEffect(() => {
     // Simulate data loading
